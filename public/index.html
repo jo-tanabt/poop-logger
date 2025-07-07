@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Poop Logger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #333;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    button, textarea {
+      font-family: inherit;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 16px;
+      margin: 10px 0;
+      background-color: white;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s;
+    }
+
+    button:hover {
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+
+    textarea {
+      width: 100%;
+      max-width: 300px;
+      height: 100px;
+      resize: vertical;
+    }
+
+    table {
+      width: 100%;
+      max-width: 400px;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    th, td {
+      border-bottom: 1px solid #eee;
+      padding: 8px;
+      text-align: left;
+    }
+
+    thead {
+      background-color: #f0f0f0;
+    }
+
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    #app {
+      display: none;
+      width: 100%;
+      max-width: 400px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Poop Logger 💩</h1>
+  <button id="loginBtn">Sign in with Google</button>
+
+  <div id="app" style="display:none;">
+    <textarea id="poopNotes" placeholder="Describe your poop..."></textarea><br>
+    <select id="poopConsistency">
+      <option value="firm">Firm</option>
+      <option value="hard">Hard</option>
+      <option value="watery">Watery</option>
+    </select><br>
+    <button id="logPoop">Log Poop</button>
+
+    <table id="poopTable">
+      <thead>
+        <tr>
+          <th style="text-align:left;">Time</th>
+          <th style="text-align:left;">Notes</th>
+          <th style="text-align:left;">Consistency</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
